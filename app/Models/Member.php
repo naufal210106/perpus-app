@@ -9,7 +9,7 @@ class Member extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'nis_nim', 'no_hp'];
+    protected $fillable = ['nama', 'nis_nim', 'no_hp', 'foto'];
 
     public function loans()
     {
