@@ -37,7 +37,7 @@ function hapus(id) {
                     v-model="keyword"
                     @keyup.enter="cari"
                     type="text"
-                    placeholder="Cari nama atau NIS/NIM..."
+                    placeholder="Cari nama, NIS/NIM, atau no. HP..."
                 >
             </div>
 
@@ -68,22 +68,3 @@ function hapus(id) {
                         <td class="border px-3 py-2">{{ member.no_hp }}</td>
                         <td class="border px-3 py-2">
                             <Link :href="`/members/${member.id}/edit`" class="mr-3">Edit</Link>
-                            <button @click="hapus(member.id)">Hapus</button>
-                        </td>
-                    </tr>
-                    <tr v-if="members.data.length === 0">
-                        <td colspan="5" class="border px-3 py-2">Belum ada data anggota.</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Tautan halaman (paginasi) bawaan hasil paginate(10) -->
-            <div class="mt-3 flex gap-3">
-                <template v-for="link in members.links" :key="link.label">
-                    <Link v-if="link.url" :href="link.url" v-html="link.label" />
-                    <span v-else v-html="link.label" class="text-gray-400" />
-                </template>
-            </div>
-        </div>
-    </AuthenticatedLayout>
-</template>
